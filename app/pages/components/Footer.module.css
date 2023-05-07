@@ -1,0 +1,53 @@
+.divcol,
+.divcol1 {
+  flex: 1;
+  position: relative;
+  background-color: var(--color-goldenrod);
+  height: 3px;
+}
+.divcol1 {
+  background-color: var(--color-salmon);
+}
+.divcol2,
+.divcol3,
+.divcol4,
+.divcol5 {
+  flex: 1;
+  position: relative;
+  background-color: var(--color-khaki);
+  height: 3px;
+}
+.divcol3,
+.divcol4,
+.divcol5 {
+  background-color: var(--color-skyblue);
+}
+.divcol4,
+.divcol5 {
+  background-color: var(--color-cornflowerblue);
+}
+.divcol5 {
+  background-color: var(--color-palevioletred);
+}
+.divrow {
+  height: 3px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.divcopyrightIcon {
+  position: relative;
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.footerfooterBgImg {
+  width: 1920px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}

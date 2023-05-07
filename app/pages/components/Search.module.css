@@ -1,0 +1,126 @@
+.location {
+  position: relative;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  width: 120px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.div,
+.selectarea {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.div {
+  width: 120px;
+  height: 20px;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 0.910003662109375px 0;
+  align-items: center;
+  justify-content: flex-start;
+}
+.selectarea {
+  position: absolute;
+  width: calc(100% - 1005px);
+  top: 0;
+  right: 990px;
+  left: 15px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 3px solid var(--color-lightgray);
+  height: 45px;
+  padding: 0 var(--padding-5xl);
+  align-items: flex-start;
+  justify-content: center;
+}
+.gender {
+  position: relative;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  width: 120px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.div1,
+.selectanimal,
+.selectsex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.div1 {
+  width: 99px;
+  height: 18px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.selectanimal,
+.selectsex {
+  position: absolute;
+  width: calc(100% - 1005px);
+  top: 0;
+  right: 795px;
+  left: 210px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 3px solid var(--color-lightgray);
+  box-sizing: border-box;
+  height: 45px;
+  padding: 0 var(--padding-5xl);
+}
+.selectanimal {
+  right: 600px;
+  left: 405px;
+}
+.inputbtn,
+.inputbtn1,
+.search {
+  width: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search {
+  position: relative;
+  font-size: var(--font-size-sm);
+  line-height: 21px;
+  font-weight: 600;
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: center;
+  height: 16px;
+  flex-shrink: 0;
+}
+.inputbtn,
+.inputbtn1 {
+  cursor: pointer;
+  border: 3px solid var(--color-skyblue);
+  padding: 0;
+  background-color: var(--color-skyblue);
+  position: absolute;
+  top: calc(50% - 30.09px);
+  left: 600.5px;
+  border-radius: var(--br-9xs);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  height: 41px;
+  flex-direction: column;
+}
+.inputbtn1 {
+  left: 708.5px;
+}
+.divrow {
+  position: relative;
+  width: 1170px;
+  height: 61px;
+  flex-shrink: 0;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--color-darkslategray);
+  font-family: var(--font-inter);
+}

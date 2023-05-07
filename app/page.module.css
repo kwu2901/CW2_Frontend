@@ -1,0 +1,217 @@
+.petAdoption {
+  position: relative;
+  line-height: 48px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 293px;
+}
+.div,
+.divcontainer,
+.sectionbreadcrumbBg {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.divcontainer,
+.sectionbreadcrumbBg {
+  position: absolute;
+  align-items: center;
+}
+.sectionbreadcrumbBg {
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 180px;
+  padding: 54px 0;
+  box-sizing: border-box;
+  background-image: url(/public/sectionbreadcrumbbg@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.divcontainer {
+  top: 267px;
+  left: calc(50% - 585px);
+  width: 1170px;
+}
+.div1 {
+  position: relative;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.spanpageLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-7xs);
+  background-color: var(--color-salmon);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  padding: 12.829999923706055px 24.920000076293945px 12.829999923706055px
+    26.600000381469727px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: var(--color-white);
+}
+.div2 {
+  position: absolute;
+  top: 16px;
+  left: 87.52px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-salmon);
+}
+.div3,
+.div4 {
+  position: absolute;
+  display: flex;
+}
+.div3 {
+  top: 17px;
+  left: 127.42px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  align-items: center;
+  width: 9.11px;
+  height: 17px;
+}
+.div4 {
+  left: 167.33px;
+}
+.div4,
+.div5,
+.div6 {
+  top: 17px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  align-items: center;
+  width: 9.11px;
+  height: 17px;
+}
+.div5 {
+  position: absolute;
+  left: 207.24px;
+  font-size: var(--font-size-mini);
+  display: flex;
+}
+.div6 {
+  left: 247.14px;
+}
+.div6,
+.div7,
+.div8 {
+  position: absolute;
+  display: flex;
+}
+.div7 {
+  top: 17px;
+  left: 287.05px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  align-items: center;
+  width: 9.11px;
+  height: 17px;
+}
+.div8 {
+  left: 326.95px;
+}
+.div10,
+.div8,
+.div9 {
+  top: 17px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  align-items: center;
+  width: 9.11px;
+  height: 17px;
+}
+.div9 {
+  position: absolute;
+  left: 366.86px;
+  display: flex;
+}
+.div10 {
+  left: 406.77px;
+}
+.div10,
+.div11,
+.div12 {
+  position: absolute;
+  display: flex;
+}
+.div11 {
+  top: 17px;
+  left: 446.67px;
+  font-size: var(--font-size-mini);
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  align-items: center;
+  width: 18px;
+  height: 17px;
+}
+.div12 {
+  top: 0.45px;
+  left: 477.97px;
+  border-radius: var(--br-7xs);
+  background-color: var(--color-salmon);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+  flex-direction: row;
+  padding: 12.829999923706055px 24.93000030517578px 12.829999923706055px
+    26.59000015258789px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: var(--color-white);
+}
+.spanpageLinkParent {
+  position: relative;
+  width: 536.49px;
+  height: 46.11px;
+  flex-shrink: 0;
+}
+.ulpagination {
+  position: absolute;
+  top: 1883.41px;
+  left: 390.5px;
+  border-radius: var(--br-9xs);
+  width: 1140px;
+  height: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray);
+}
+.divmainWrapper {
+  position: relative;
+  width: 1920px;
+  height: 1955.91px;
+  flex-shrink: 0;
+}
+.frame {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: var(--font-size-21xl);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
