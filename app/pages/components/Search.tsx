@@ -94,15 +94,15 @@ const Search: FunctionComponent<{ onSearch: (location: string, gender: string, b
       <button className={styles.inputbtn} autoFocus onClick={handleClick}>
         <div className={styles.search}>Search</div>
       </button>
-      {user === null ? null :
-        (
+      {user?.staff ? (
           <button 
             className={styles.inputbtn1}
             onClick={() => setShowAdd(true)}
             autoFocus>
             <div className={styles.search}>Add</div>
           </button>
-        )}
+        ) : null
+        }
       {showAdd && (
         <Add
           onClose={handleAddClose}

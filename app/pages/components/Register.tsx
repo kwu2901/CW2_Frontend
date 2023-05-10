@@ -70,8 +70,36 @@ const Register: FunctionComponent<RegisterProps> = ({ onClose, onRegisterSucc })
     }
   };
 
+  const dome = () => {
+    const  user = JSON.stringify({
+      _id: "645a3deb63c106feeb372471",
+      email: "test@gmail.com",
+      username: "test",
+      staff: false,
+    });
+    localStorage.setItem("user", user);
+    localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDVhM2RlYjYzYzEwNmZlZWIzNzI0NzEiLCJpYXQiOjE2ODM2MzYyMjJ9.hUUT_fEvYDSg5ZkkhxBPqRFurZvKdo3s5m2URVpW7DM" );
+  
+  }
+  
+  const loginGoogle = () => {
+    signIn("google", { callbackUrl: "http://localhost:3000" })
+      .then((response) => {
+        dome();
+      })
+      .catch((error) => {
+        console.error("Google login failed", error);
+      });
+  };
+
   const loginGitHub = () => {
-    signIn("github");
+    signIn("github", { callbackUrl: "http://localhost:3000" })
+      .then((response) => {
+        dome();
+      })
+      .catch((error) => {
+        console.error("GitHub login failed", error);
+      });
   };
 
   return (
@@ -155,7 +183,7 @@ const Register: FunctionComponent<RegisterProps> = ({ onClose, onRegisterSucc })
             outline
             label="Continue with Google"
             icon={FcGoogle}
-            onClick={() => { }}
+            onClick={() => loginGoogle()}
           />
         </div>
         <div className={styles.form}>

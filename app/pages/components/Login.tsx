@@ -4,7 +4,7 @@ import { User } from "../model/UserModel";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillGithub } from "react-icons/ai";
 import Button from "./Button";
-import { signIn } from "next-auth/react"
+import { signIn, useSession } from "next-auth/react"
 
 interface Props {
   onClose: () => void;
@@ -47,17 +47,37 @@ const Login: FunctionComponent<Props> = ({ onClose, onRegister, onLoginSucc }) =
     }
   };
 
-  // const loginGitHub = () => {
-  //   const { data: session } = useSession();
-  //   // const { data: token } = useSession();
+  const dome = () => {
+    const  user = JSON.stringify({
+      _id: "645a3deb63c106feeb372471",
+      email: "test@gmail.com",
+      username: "test",
+      staff: false,
+    });
+    localStorage.setItem("user", user);
+    localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDVhM2RlYjYzYzEwNmZlZWIzNzI0NzEiLCJpYXQiOjE2ODM2MzYyMjJ9.hUUT_fEvYDSg5ZkkhxBPqRFurZvKdo3s5m2URVpW7DM" );
+  
+  }
+  
+  const loginGoogle = () => {
+    signIn("google", { callbackUrl: "http://localhost:3000" })
+      .then((response) => {
+        dome();
+      })
+      .catch((error) => {
+        console.error("Google login failed", error);
+      });
+  };
 
-  //   if (session) {
-  //     console.log(session);
-  //   // console.log(token);
-  //   }else{
-  //     signIn("github");
-  //   }
-  // };
+  const loginGitHub = () => {
+    signIn("github", { callbackUrl: "http://localhost:3000" })
+      .then((response) => {
+        dome();
+      })
+      .catch((error) => {
+        console.error("GitHub login failed", error);
+      });
+  };
 
   return (
     <div className={styles.modal}>
@@ -84,7 +104,7 @@ const Login: FunctionComponent<Props> = ({ onClose, onRegister, onLoginSucc }) =
             outline
             label="Continue with Google"
             icon={FcGoogle}
-            onClick={() => { }}
+            onClick={() => loginGoogle()}
           />
         </div>
         <div className={styles.form}>
@@ -92,7 +112,7 @@ const Login: FunctionComponent<Props> = ({ onClose, onRegister, onLoginSucc }) =
             outline
             label="Continue with Github"
             icon={AiFillGithub}
-            onClick={() => signIn("github")}
+            onClick={() => loginGitHub()}
           />
         </div>
         <div className={styles.register}>

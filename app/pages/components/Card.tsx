@@ -4,6 +4,7 @@ import styles from "./Card.module.css";
 import { User } from "../model/UserModel";
 import Edit from "./Edit";
 import { Cat } from "../model/CatModel";
+import Message from "./Message";
 
 type Props = {
   cats: Cat;
@@ -14,6 +15,7 @@ const Card: FunctionComponent<Props> = ({ cats, fav }) => {
   const [user, setUser] = useState<User | null>(null);
   const [showEdit, setShowEdit] = useState(false);
   const [isFavorite, setIsFavorite] = useState(fav);
+  const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
@@ -26,10 +28,21 @@ const Card: FunctionComponent<Props> = ({ cats, fav }) => {
     setShowEdit(false);
   };
 
+  const handleMessageClose = () => {
+    setShowMessage(false);
+  };
+
   const handleEditSucc = () => {
     setShowEdit(false);
     window.location.reload();
   };
+  
+  const handleFavorite = () => {
+    if(user){
+      handleFavoriteClick();
+    }else{
+      alert("Please login!");
+    }  };
 
   const handleFavoriteClick = async () => {
     // const url = 'https://backend.kwu2901.repl.co'
@@ -59,6 +72,14 @@ const Card: FunctionComponent<Props> = ({ cats, fav }) => {
     }
   };
 
+  const handleShowMessage = () => {
+    if(user){
+      setShowMessage(true);
+    }else{
+      alert("Please login!");
+    }
+  }
+
   return (
     <div className={styles.divrow}>
       <div className={styles.divmedia}>
@@ -67,7 +88,7 @@ const Card: FunctionComponent<Props> = ({ cats, fav }) => {
           alt=""
           src={cats.image}
         />
-        <button className={styles.inputbtn2} autoFocus onClick={handleFavoriteClick}>
+        <button className={styles.inputbtn2} autoFocus onClick={handleFavorite}>
         <img className={styles.inputbtnChild} alt="" src={isFavorite ? "/star-1.svg" : "/star-2.svg"} />
         </button>
         <div className={styles.divmediaBody}>
@@ -107,7 +128,7 @@ const Card: FunctionComponent<Props> = ({ cats, fav }) => {
               {cats.describe}
             </div>
           </div>
-          <div className={styles.abtn}>
+          <div className={styles.abtn} onClick={() => handleShowMessage()}>
             <div className={styles.div6}>
               <div className={styles.contactUs}>contact us</div>
             </div>
@@ -127,6 +148,15 @@ const Card: FunctionComponent<Props> = ({ cats, fav }) => {
               cats={cats}
             />
           )}
+          {showMessage && user? (
+            <Message
+              message={[{user_id: user._id, title: "Cat ID: "+cats._id, content: "", read: true}]}
+              reply={true}
+              //onChange={handleMessageClose}
+              onClose={handleMessageClose}
+              // onRegisterSucc={handleRegisterSucc}
+            />
+          ):null}
         </div>
       </div>
     </div>
